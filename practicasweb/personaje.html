@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Shrek</title>
+    <meta name="description" content="turismo valles">
+    <meta name="keywords" content="cascadas, Micos, Xilitla, Tamasopo, Tirolesa">
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            /* Loop through a collection of all HTML elements: */
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                /search for elements with a certain atrribute:/
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    /* Make an HTTP request using the attribute value as the file name: */
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                            if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                            /* Remove the attribute, and call this function once more: */
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    /* Exit the function: */
+                    return;
+                }
+            }
+        }
+    </script>
+    <style>
+        th,td{
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor" style="width: 1000px; height: 800px;">
+        <header style="width: 1000px; height: 150px;">
+            <div id="logo" style="background-color: white;width:200px; height: 150px;float:left ; border: solid right;">
+                <img src="pelicula.png" width="200px" height="150px">
+            </div>
+            <div id="slogan" style="background-color: rgb(57, 33, 234); width: 800px; height: 150px; float: left;">
+                <center>
+                    <p style="color:rgba(6, 4, 19, 0.658); font-size:22px; font-family:Open Sans"> DreamWorks Animation </p>
+                </center>
+            </div>
+        </header>
+
+        <div w3-include-html="Menu.html"></div>
+
+
+        <aside style="background-color: rgb(167, 247, 165); width: 200px; height: 400px; float: left;">
+            <p>
+                <a href="https://es.wikipedia.org/wiki/Shrek" target="_blank"> wikipedia</a><br>
+                <a href="https://doblaje.fandom.com/es/wiki/Shrek" target="_blank"> doblaje wiki</a><br>
+                <a href="https://www.commonsensemedia.org/es/resenas-pelicula/shrek" target="_blank"> reseña de common</a><br>
+                
+                
+            </p>
+        </aside>
+        <section style="background-color: white; width: 800px; height: 400px0; float: right;">
+            <p style="color:rgb(32, 248, 46); font-size:22px; font-family:cursive;">Shrek</p>
+            <article>
+                <p> Shrek es una película de comedia estadounidense de animación por computadora estrenada en 2001 basada en el libro homónimo de William Steig de 1990. Es la primera entrega de la franquicia Shrek. Andrew Adamson y Vicky Jenson en su debut como directores de largometrajes, dirigieron la película a partir de un guion escrito por Joe Stillman, Roger S. H. Schulman y el equipo de guionistas formado por Ted Elliott y Terry Rossio. </p>
+                <a href="https://es.wikipedia.org/wiki/Shrek"
+                    target="_blank"> <img src="imagen1.webp" width="200" height="200"></img></a>
+                    <a href="https://doblaje.fandom.com/es/wiki/Shrek"
+                        target="_blank"> <img src="imagen2.jpg" width="200" height="200"></img></a>
+                        <a href="https://www.commonsensemedia.org/es/resenas-pelicula/shrek" target="_blank"> <img src="imagen3.jpeg" width="200" height="200"></img></a>
+
+            </article>
+        </section>
+        <footer style="background-color: rgb(56, 54, 54); color: white; width: 1000px; height: 100px; float: left;">
+           
+            <TABLE style="text-align: center;width: 100%">
+
+                <TR>
+                    <TH>Nombre</TH>
+                    <TH>Numero de control</TH>
+                    <TH>Carrera</TH>
+                    <TH>Semestre</TH>
+                    <TH>Grupo</TH>
+                </TR>
+                
+                <TR>
+                    <TD>Joseph Manuel Jaramillo Morales</TD>
+                    <TD>20690377 </TD>  
+                    <TD>ISC</TD>
+                    <TD>Noveno</TD>
+                    <TD>L</TD>
+
+                </TR>
+                
+                </TABLE>
+        </footer>
+    </div>
+
+
+    <script>
+        includeHTML();
+    </script>
+</body>
+
+</html>
